@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid - grid-column-start</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Thực hành CSS: grid-column-start</h1>
+    <p>Ba ví dụ minh họa các giá trị <code>auto</code>, <code>span 2</code> và đường kẻ cột <code>2</code>.</p>
+
+    <section>
+      <h2>1. Giá trị auto</h2>
+      <p><code>grid-column-start: auto;</code> — phần tử được đặt theo luồng tự động của Grid.</p>
+      <div class="grid grid-auto">
+        <div class="item highlight">Item 1</div><div class="item">Item 2</div><div class="item">Item 3</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Giá trị span 2</h2>
+      <p><code>grid-column-start: span 2;</code> — phần tử được bố trí để chiếm hai cột trong ví dụ này.</p>
+      <div class="grid grid-span">
+        <div class="item highlight">Item 1 (span 2)</div><div class="item">Item 2</div><div class="item">Item 3</div><div class="item">Item 4</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Giá trị column-line</h2>
+      <p><code>grid-column-start: 2;</code> — Item 1 bắt đầu tại đường kẻ cột số 2.</p>
+      <div class="grid grid-line">
+        <div class="item highlight">Item 1 (start: 2)</div><div class="item">Item 2</div><div class="item">Item 3</div><div class="item">Item 4</div>
+      </div>
+      <p class="note">Grid có 4 cột sẽ có 5 đường kẻ cột: 1, 2, 3, 4, 5.</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  color: #222;
+  background: #f5f7fa;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 { color: #17365d; }
+section {
+  margin: 24px 0;
+  padding: 18px;
+  background: white;
+  border: 1px solid #d8dee8;
+  border-radius: 8px;
+}
+
+.grid {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.grid-auto {
+  grid-template-columns: 100px 100px 100px;
+}
+
+.grid-span,
+.grid-line {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.item {
+  min-height: 72px;
+  padding: 20px 10px;
+  text-align: center;
+  background: #d9eaf7;
+  border: 1px solid #7aa6c2;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.highlight {
+  background: #ffd98a;
+  border-color: #c28a22;
+}
+
+/* Example 1: normal automatic placement */
+.grid-auto .highlight {
+  grid-column-start: auto;
+}
+
+/* Example 2: span two columns */
+.grid-span .highlight {
+  grid-column-start: span 2;
+}
+
+/* Example 3: begin at column line 2 */
+.grid-line .highlight {
+  grid-column-start: 2;
+}
+
+.note {
+  font-size: 14px;
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  body { padding: 12px; }
+  section { padding: 12px; }
+  .grid-span, .grid-line { grid-template-columns: repeat(4, minmax(55px, 1fr)); }
+  .item { padding: 14px 4px; font-size: 13px; }
+}
