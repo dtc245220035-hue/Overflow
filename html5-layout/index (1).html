@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bố cục trang web với HTML5 & CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <!-- Header: Logo & Banner -->
+        <header>
+            <h1>Trang Web HTML5 Semantic Layout</h1>
+            <p>Sử dụng các thẻ header, nav, section, article, aside, footer</p>
+        </header>
+
+        <!-- Nav: Điều hướng trang -->
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
+
+        <div class="content-wrapper">
+            <!-- Aside: Menu trái -->
+            <aside class="left-aside">
+                <h3>Danh mục</h3>
+                <ul>
+                    <li><a href="#">Khóa học HTML5</a></li>
+                    <li><a href="#">Căn bản CSS3</a></li>
+                    <li><a href="#">Thực hành Flexbox</a></li>
+                </ul>
+            </aside>
+
+            <!-- Section: Khu vực nội dung chính -->
+            <section class="main-section">
+                <article>
+                    <h2>Bài viết 1: Giới thiệu HTML5 Semantic Elements</h2>
+                    <p>Các thẻ HTML5 giúp cấu trúc trang web trở nên rõ ràng, chuẩn SEO và dễ bảo trì hơn so với việc lạm dụng thẻ div...</p>
+                </article>
+                <article>
+                    <h2>Bài viết 2: Tối ưu hóa bố cục với CSS</h2>
+                    <p>Kết hợp thuộc tính Float, Flexbox cùng thẻ HTML5 giúp tạo giao diện linh hoạt, thân thiện trên nhiều thiết bị...</p>
+                </article>
+            </section>
+
+            <!-- Aside: Thông tin phụ bên phải -->
+            <aside class="right-aside">
+                <h3>Thông tin phụ</h3>
+                <p>Lịch làm việc, quảng cáo và bài viết liên quan...</p>
+            </aside>
+        </div>
+
+        <!-- Footer: Chân trang -->
+        <footer>
+            <p>&copy; 2026 Bản quyền thuộc về Website HTML5 Layout. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
