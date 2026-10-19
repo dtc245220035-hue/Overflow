@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Bootstrap Grid System</title>
+    <!-- Nhúng Bootstrap CSS từ CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <style>
+        /* Tùy chỉnh nhẹ để giao diện đẹp và chuyên nghiệp hơn */
+        body {
+            background-color: #f8f9fa;
+        }
+        .header-section {
+            background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .header-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .main-content, .sidebar {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        .sidebar {
+            background: #eef2f7;
+            border-left: 4px solid #0d6efd;
+        }
+        .sidebar h3 {
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.25rem;
+        }
+        .card-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid #6c757d;
+            transition: transform 0.2s;
+        }
+        .card-item:hover {
+            transform: translateX(5px);
+            border-left-color: #0d6efd;
+        }
+        .footer {
+            background: #212529;
+            color: #fff;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container"> <!-- Sử dụng container để giới hạn chiều rộng -->
+            <a class="navbar-brand fw-bold" href="#">MyWebsite</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Giới thiệu</a></li>
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dịch vụ
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Thiết kế Web</a></li>
+                            <li><a class="dropdown-item" href="#">SEO & Marketing</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Hỗ trợ kỹ thuật</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header-section">
+        <div class="container">
+            <h1>Chào mừng đến với MyWebsite</h1>
+            <p class="lead mb-0">Bài tập thực hành Bootstrap Grid System</p>
+        </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT & SIDEBAR ================= -->
+    <div class="container my-5">
+        <div class="row g-4"> <!-- g-4 tạo khoảng cách giữa các cột -->
+            
+            <!-- Cột Nội dung chính (chiếm 8/12 trên màn hình ≥ 992px) -->
+            <div class="col-lg-8">
+                <div class="main-content">
+                    <h2 class="fw-bold text-dark mb-4">Nội dung chính</h2>
+                    <p class="text-muted">
+                        Đây là khu vực nội dung chính của trang web. Trên màn hình Desktop (kích thước ≥ 992px), 
+                        phần này sẽ chiếm <b>8 phần</b> (tương đương 66.6%) chiều rộng của container.
+                    </p>
+                    <p class="text-muted">
+                        Khi thu nhỏ màn hình xuống dưới 992px (Tablet/Mobile), phần này sẽ tự động chiếm toàn bộ 
+                        chiều rộng (12 phần) và Sidebar sẽ bị đẩy xuống dưới.
+                    </p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card-item">
+                                <h5 class="fw-bold mb-2">Bài viết 1</h5>
+                                <p class="mb-0 text-muted small">Tóm tắt nội dung bài viết đầu tiên ở đây.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-item">
+                                <h5 class="fw-bold mb-2">Bài viết 2</h5>
+                                <p class="mb-0 text-muted small">Tóm tắt nội dung bài viết thứ hai ở đây.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cột Sidebar (chiếm 4/12 trên màn hình ≥ 992px) -->
+            <div class="col-lg-4">
+                <div class="sidebar">
+                    <h3 class="fw-bold text-dark">Sidebar</h3>
+                    <p class="text-muted small mb-4">
+                        Khu vực này chứa thông tin phụ, quảng cáo hoặc danh mục. 
+                        Trên màn hình nhỏ, nó sẽ tự động nằm dưới Nội dung chính.
+                    </p>
+                    
+                    <h5 class="fw-bold mt-4 mb-3">Danh mục</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark">📌 Tin tức mới nhất</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark">📌 Bài viết phổ biến</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark">📌 Sự kiện sắp tới</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark">📌 Liên kết hữu ích</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 MyWebsite. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Nhúng Bootstrap JS từ CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
