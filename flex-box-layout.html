@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+
+        /* Khung chứa toàn bộ bố cục */
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 40px); /* Trừ đi padding của body */
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+
+        /* Header & Footer */
+        .header, .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        .nav {
+            background-color: #444;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+        }
+
+        /* Phần thân chính chứa Content + Sidebar */
+        .main-container {
+            display: flex;
+            flex: 1; /* Chiếm toàn bộ không gian còn lại giữa nav và footer */
+        }
+
+        /* Nội dung chính */
+        .content {
+            flex: 3;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            flex: 1;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-left: 1px solid #ddd;
+        }
+
+        /* ================= RESPONSIVE (MOBILE) ================= */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+            }
+            .sidebar {
+                border-left: none;
+                border-top: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">Header</header>
+        <nav class="nav">Navigation</nav>
+        <div class="main-container">
+            <main class="content">
+                <h2>Main Content</h2>
+                <p style="margin-top: 10px; line-height: 1.6; color: #555;">
+                    Đây là khu vực nội dung chính (chiếm 3 phần không gian). 
+                    Trên màn hình Desktop, phần này nằm bên trái và rộng hơn Sidebar.
+                    Khi thu nhỏ màn hình xuống dưới 768px, bố cục sẽ tự động chuyển sang dạng cột dọc.
+                </p>
+            </main>
+            <aside class="sidebar">
+                <h3>Sidebar</h3>
+                <p style="margin-top: 10px; color: #666;">Khu vực nội dung phụ (chiếm 1 phần).</p>
+            </aside>
+        </div>
+        <footer class="footer">Footer</footer>
+    </div>
+</body>
+</html>
