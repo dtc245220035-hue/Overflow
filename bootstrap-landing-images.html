@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page với Bootstrap & Hình Ảnh</title>
+    <!-- Nhúng Bootstrap CSS từ CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <style>
+        /* Tùy chỉnh CSS cho Banner / Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #0d6efd;
+            margin-bottom: 15px;
+        }
+
+        .cta-section {
+            background-color: #0d6efd;
+            color: white;
+            padding: 60px 0;
+            border-radius: 15px;
+            margin-bottom: 50px;
+        }
+
+        /* Hiệu ứng hover cho các cột tính năng */
+        .feature-col {
+            transition: transform 0.3s ease;
+        }
+        .feature-col:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">TechBrand</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Tính năng</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= BANNER / HERO SECTION ================= -->
+    <header class="hero-section" id="home">
+        <div class="container">
+            <h1 class="display-4">Chào mừng đến với TechBrand</h1>
+            <p class="lead mb-4">Giải pháp công nghệ đột phá giúp doanh nghiệp của bạn vươn xa hơn.</p>
+            <a href="#about" class="btn btn-primary btn-lg px-5 fw-bold">Khám Phá Ngay</a>
+        </div>
+    </header>
+
+    <!-- ================= GIỚI THIỆU ================= -->
+    <section class="container py-5" id="about">
+        <div class="row align-items-center g-5">
+            <!-- Cột Hình ảnh -->
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Giới thiệu TechBrand" 
+                     class="img-fluid rounded-4 shadow-lg">
+            </div>
+            <!-- Cột Nội dung -->
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4 text-primary">Về Chúng Tôi</h2>
+                <p class="text-muted fs-5 mb-4">
+                    TechBrand tự hào là đơn vị tiên phong trong việc cung cấp các giải pháp phần mềm và chuyển đổi số. 
+                    Chúng tôi giúp các doanh nghiệp tối ưu hóa quy trình, nâng cao hiệu suất và tạo ra những trải nghiệm tuyệt vời nhất cho khách hàng.
+                </p>
+                <ul class="list-unstyled text-muted fs-5">
+                    <li class="mb-2">✅ Đội ngũ chuyên gia giàu kinh nghiệm.</li>
+                    <li class="mb-2">✅ Công nghệ hiện đại, bảo mật cao.</li>
+                    <li class="mb-2">✅ Hỗ trợ kỹ thuật 24/7.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TÍNH NĂNG ================= -->
+    <section class="bg-light py-5" id="features">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Tính Năng Nổi Bật</h2>
+                <p class="text-muted">Những ưu điểm vượt trội khi sử dụng dịch vụ của chúng tôi.</p>
+            </div>
+            
+            <div class="row g-4 text-center">
+                <!-- Tính năng 1 -->
+                <div class="col-md-3 feature-col">
+                    <div class="p-4 bg-white rounded-3 shadow-sm h-100">
+                        <div class="feature-icon">⚡</div>
+                        <h4 class="fw-bold">Siêu Tốc Độ</h4>
+                        <p class="text-muted small mb-0">Xử lý dữ liệu nhanh chóng, giảm thiểu thời gian chờ đợi.</p>
+                    </div>
+                </div>
+                <!-- Tính năng 2 -->
+                <div class="col-md-3 feature-col">
+                    <div class="p-4 bg-white rounded-3 shadow-sm h-100">
+                        <div class="feature-icon">🔒</div>
+                        <h4 class="fw-bold">Bảo Mật Tuyệt Đối</h4>
+                        <p class="text-muted small mb-0">Dữ liệu của bạn được mã hóa và bảo vệ an toàn 100%.</p>
+                    </div>
+                </div>
+                <!-- Tính năng 3 -->
+                <div class="col-md-3 feature-col">
+                    <div class="p-4 bg-white rounded-3 shadow-sm h-100">
+                        <div class="feature-icon">📱</div>
+                        <h4 class="fw-bold">Responsive</h4>
+                        <p class="text-muted small mb-0">Hiển thị hoàn hảo trên mọi thiết bị từ điện thoại đến PC.</p>
+                    </div>
+                </div>
+                <!-- Tính năng 4 -->
+                <div class="col-md-3 feature-col">
+                    <div class="p-4 bg-white rounded-3 shadow-sm h-100">
+                        <div class="feature-icon">🛠️</div>
+                        <h4 class="fw-bold">Hỗ Trợ 24/7</h4>
+                        <p class="text-muted small mb-0">Đội ngũ kỹ thuật luôn sẵn sàng giải đáp mọi thắc mắc của bạn.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CTA SECTION ================= -->
+    <section class="container mt-5">
+        <div class="cta-section text-center">
+            <div class="container py-4">
+                <h2 class="fw-bold mb-3">Bạn đã sẵn sàng bứt phá?</h2>
+                <p class="lead mb-4">Hãy để TechBrand đồng hành cùng sự phát triển của doanh nghiệp bạn.</p>
+                <a href="#" class="btn btn-light btn-lg px-5 fw-bold text-primary">Đăng Ký Ngay</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 TechBrand. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Nhúng Bootstrap JS từ CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
