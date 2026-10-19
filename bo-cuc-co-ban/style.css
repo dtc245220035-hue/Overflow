@@ -1,0 +1,102 @@
+/* Cố định phông chữ cho toàn trang */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Phân vùng chứa toàn bộ nội dung, căn giữa màn hình */
+#main {
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+/* Phân vùng đầu trang (Logo & Banner) */
+#head {
+    height: 100px;
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #2980b9;
+    box-sizing: border-box;
+}
+
+#head h1 {
+    margin: 0;
+}
+
+/* Phân vùng chứa liên kết đầu trang */
+#head-link {
+    background-color: #2c3e50;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+}
+
+#head-link a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+#head-link a:hover {
+    color: #f1c40f;
+}
+
+/* Phân vùng bên trái */
+#left {
+    width: 200px;
+    min-height: 400px;
+    float: left;
+    background-color: #e8f8f5;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#left ul {
+    list-style: none;
+    padding: 0;
+}
+
+#left ul li {
+    margin-bottom: 10px;
+}
+
+#left ul li a {
+    text-decoration: none;
+    color: #2c3e50;
+}
+
+/* Phân vùng nội dung chính */
+#content {
+    width: 600px;
+    min-height: 400px;
+    float: left;
+    background-color: #ffffff;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Phân vùng bên phải */
+#right {
+    width: 200px;
+    min-height: 400px;
+    float: left;
+    background-color: #fef9e7;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Phân vùng chân trang */
+#footer {
+    clear: both;
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 10px;
+}
