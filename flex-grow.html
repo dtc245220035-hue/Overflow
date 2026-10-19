@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài thực hành CSS flex-grow</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 40px 20px;
+            color: #1a1a1a;
+        }
+
+        .section {
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #1a1a1a;
+            border-left: 5px solid #007bff;
+            padding-left: 15px;
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+
+        .note {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        code {
+            background: #eef2f7;
+            color: #d63384;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+            font-size: 0.9em;
+        }
+
+        /* Style chung cho các container */
+        .container {
+            display: flex;
+            gap: 10px;
+            border: 2px dashed #999;
+            padding: 10px;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+
+        .item {
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 6px;
+            border: 1px solid #007bff;
+            background-color: lightblue;
+            color: #1a1a1a;
+            flex-basis: 60px; /* Kích thước cơ sở ban đầu */
+        }
+
+        /* ================= TRƯỜNG HỢP 1: MẶC ĐỊNH ================= */
+        #case1 .item {
+            background-color: #e0e0e0;
+            border-color: #999;
+        }
+
+        /* ================= TRƯỜNG HỢP 2: 1 ITEM GROW ================= */
+        #case2 .item2 {
+            flex-grow: 1;
+            background-color: lightgreen;
+            border-color: #28a745;
+        }
+
+        /* ================= TRƯỜNG HỢP 3: NHIỀU ITEM GROW ================= */
+        #case3 .item1 { flex-grow: 1; background-color: #ffcdd2; border-color: #dc3545; }
+        #case3 .item3 { flex-grow: 2; background-color: #fff9c4; border-color: #ffc107; }
+        #case3 .item5 { flex-grow: 1; background-color: #c8e6c9; border-color: #28a745; }
+
+    </style>
+</head>
+<body>
+
+    <!-- ================= TRƯỜNG HỢP 1 ================= -->
+    <div class="section" id="case1">
+        <h2>1. Trạng thái mặc định (Không dùng flex-grow)</h2>
+        <p class="note">
+            Tất cả 5 Item đều có <code>flex-basis: 60px</code>. Không có Item nào được set <code>flex-grow</code>, nên chúng giữ nguyên kích thước và dồn về bên trái. Khoảng trống còn dư nằm bên phải.
+        </p>
+        <div class="container">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+        </div>
+    </div>
+
+    <!-- ================= TRƯỜNG HỢP 2 ================= -->
+    <div class="section" id="case2">
+        <h2>2. Áp dụng flex-grow: 1 cho Item 2</h2>
+        <p class="note">
+            Theo yêu cầu bài tập: Set <code>flex-grow: 1</code> cho Item 2. Nó sẽ "nuốt" toàn bộ khoảng trống còn dư, dãn rộng ra và chiếm phần lớn Container, 4 Item còn lại vẫn giữ nguyên kích thước 60px.
+        </p>
+        <div class="container">
+            <div class="item item1">Item 1</div>
+            <div class="item item2">Item 2<br>(Grow 1)</div>
+            <div class="item item3">Item 3</div>
+            <div class="item item4">Item 4</div>
+            <div class="item item5">Item 5</div>
+        </div>
+    </div>
+
+    <!-- ================= TRƯỜNG HỢP 3 ================= -->
+    <div class="section" id="case3">
+        <h2>3. Áp dụng flex-grow cho nhiều Item (Mở rộng)</h2>
+        <p class="note">
+            Thử thách thêm: Item 1 (<code>grow: 1</code>), Item 3 (<code>grow: 2</code>), Item 5 (<code>grow: 1</code>). Khoảng trống sẽ được chia theo tỷ lệ <b>1 : 2 : 1</b>. Item 3 sẽ rộng nhất.
+        </p>
+        <div class="container">
+            <div class="item item1">Item 1<br>(Grow 1)</div>
+            <div class="item item2">Item 2</div>
+            <div class="item item3">Item 3<br>(Grow 2)</div>
+            <div class="item item4">Item 4</div>
+            <div class="item item5">Item 5<br>(Grow 1)</div>
+        </div>
+    </div>
+
+</body>
+</html>
