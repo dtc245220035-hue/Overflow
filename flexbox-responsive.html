@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout với CSS Flexbox</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #1a1a1a;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* Container chính dùng Flexbox dọc */
+        .container {
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: calc(100vh - 40px);
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        /* ================= HEADER ================= */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 30px 25px;
+            text-align: center;
+        }
+
+        .header h1 { font-size: 1.8rem; margin-bottom: 5px; }
+        .header p { opacity: 0.85; font-size: 0.95rem; }
+
+        /* ================= NAVIGATION ================= */
+        .nav {
+            background: #2c3e50;
+            padding: 15px 25px;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap; /* Cho phép menu xuống dòng nếu không đủ chỗ */
+            justify-content: center;
+        }
+
+        .nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav a:hover { color: #f1c40f; }
+
+        /* ================= THÂN CHÍNH ================= */
+        .main-container {
+            display: flex;
+            flex: 1; /* Tự động giãn để lấp đầy khoảng trống giữa nav và footer */
+        }
+
+        /* Main Content */
+        .content {
+            flex: 3; /* Chiếm 3 phần không gian */
+            padding: 30px 25px;
+            background: #fff;
+        }
+
+        .content h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .content p {
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .content .cards {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap; /* Cho phép các card xuống dòng nếu hẹp */
+            margin-top: 20px;
+        }
+
+        .content .card {
+            flex: 1;
+            min-width: 180px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #9b59b6;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .content .card h3 { font-size: 1rem; color: #2c3e50; margin-bottom: 8px; }
+        .content .card p { font-size: 0.85rem; margin: 0; color: #666; }
+
+        /* Sidebar */
+        .sidebar {
+            flex: 1; /* Chiếm 1 phần không gian */
+            background: #f4f6f8;
+            padding: 30px 25px;
+            border-left: 1px solid #e1e8ed;
+        }
+
+        .sidebar h3 {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sidebar li {
+            background: #fff;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #444;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border-left: 3px solid #3498db;
+        }
+
+        /* ================= FOOTER ================= */
+        .footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9rem;
+        }
+
+        /* ================= RESPONSIVE (MOBILE) ================= */
+        @media (max-width: 768px) {
+            /* Chuyển toàn bộ thân chính sang xếp dọc */
+            .main-container {
+                flex-direction: column;
+            }
+
+            /* Sidebar đẩy xuống dưới Content */
+            .sidebar {
+                border-left: none;
+                border-top: 1px solid #e1e8ed;
+            }
+
+            /* Menu điều hướng xếp dọc */
+            .nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .header h1 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HEADER -->
+        <header class="header">
+            <h1>🌐 Trang Web Responsive</h1>
+            <p>Xây dựng bố cục bằng CSS Flexbox</p>
+        </header>
+
+        <!-- NAVIGATION -->
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Dịch vụ</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
+
+        <!-- THÂN CHÍNH (CONTENT + SIDEBAR) -->
+        <div class="main-container">
+            
+            <!-- NỘI DUNG CHÍNH -->
+            <main class="content">
+                <h2>📖 Nội dung chính</h2>
+                <p>
+                    Đây là khu vực nội dung chính của trang web. Trên màn hình Desktop, 
+                    phần này chiếm <b>3 phần</b> không gian và nằm bên trái Sidebar. 
+                    Khi màn hình thu nhỏ xuống dưới 768px, bố cục sẽ tự động chuyển sang dạng cột dọc.
+                </p>
+                <p>
+                    CSS Flexbox giúp việc tạo bố cục trở nên linh hoạt nhờ các thuộc tính 
+                    <code>flex-direction</code>, <code>flex-grow</code> và <code>flex-wrap</code>.
+                </p>
+
+                <div class="cards">
+                    <div class="card">
+                        <h3>Bài viết 1</h3>
+                        <p>Tóm tắt nội dung của bài viết đầu tiên.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Bài viết 2</h3>
+                        <p>Tóm tắt nội dung của bài viết thứ hai.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Bài viết 3</h3>
+                        <p>Tóm tắt nội dung của bài viết thứ ba.</p>
+                    </div>
+                </div>
+            </main>
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <h3>📌 Danh mục phụ</h3>
+                <ul>
+                    <li>Tin tức mới nhất</li>
+                    <li>Bài viết phổ biến</li>
+                    <li>Quảng cáo</li>
+                    <li>Liên kết hữu ích</li>
+                    <li>Đăng ký nhận tin</li>
+                </ul>
+            </aside>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            © 2026 Trang Web Responsive. Bài tập CSS Flexbox.
+        </footer>
+
+    </div>
+
+</body>
+</html>
